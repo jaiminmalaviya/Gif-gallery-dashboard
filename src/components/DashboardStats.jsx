@@ -36,7 +36,7 @@ const DashboardStats = ({ startDate, endDate }) => {
    }, [startDate, endDate])
 
    return (
-      <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 mx-6 sm:mx-12 md:mt-6 sm:mt-4 mt-2 gap-4">
+      <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:mt-6 sm:mt-4 mt-2 gap-4 bg-black rounded-xl border shadow-lg border-gray-700">
          <DashboardStatsCard
             title="Total Active Users"
             data={dashboardStats.totalActiveUsers[0]?.totalActiveUsers || 0}

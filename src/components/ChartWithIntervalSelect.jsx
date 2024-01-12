@@ -2,7 +2,7 @@ import { Bar } from 'react-chartjs-2'
 
 const ChartWithIntervalSelect = ({ options, data, selectedInterval, setSelectedInterval }) => {
    return (
-      <div className="relative border border-white shadow-lg rounded-xl xl:py-10 xl:px-16 lg:py-8 lg:px-12 sm:py-8 sm:px-10 p-5 sm:m-5 my-5 xl:m-10 bg-white">
+      <div className="relative border border-white shadow-lg rounded-xl xl:py-10 xl:px-16 lg:py-8 lg:px-12 sm:py-8 sm:px-10 p-5 bg-white">
          <div className="inline-flex absolute right-4 top-4">
             <svg
                className="w-2 h-2 absolute top-0 right-0 m-4 pointer-events-none"
