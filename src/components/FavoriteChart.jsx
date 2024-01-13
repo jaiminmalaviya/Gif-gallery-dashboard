@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import ChartWithIntervalSelect from './ChartWithIntervalSelect'
+import Chart from './Chart'
 
 export const options = {
    responsive: true,
@@ -10,6 +10,12 @@ export const options = {
       },
       title: {
          display: true,
+         font: {
+            size: '16px',
+         },
+         padding: {
+            bottom: 14,
+         },
          text: 'Number of Favorites',
       },
       datalabels: {
@@ -21,8 +27,7 @@ export const options = {
    },
 }
 
-const FavoriteChart = ({ startDate, endDate }) => {
-   const [selectedInterval, setSelectedInterval] = useState('daily')
+const FavoriteChart = ({ startDate, endDate, selectedInterval }) => {
    const [fetchData, setFetchData] = useState([])
 
    useEffect(() => {
@@ -80,11 +85,10 @@ const FavoriteChart = ({ startDate, endDate }) => {
    }
 
    return (
-      <ChartWithIntervalSelect
+      <Chart
          options={options}
          data={data}
-         selectedInterval={selectedInterval}
-         setSelectedInterval={setSelectedInterval}
+         colSpan={2}
       />
    )
 }

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import ChartWithIntervalSelect from './ChartWithIntervalSelect'
+import Chart from './Chart'
 
 export const options = {
    responsive: true,
@@ -10,6 +10,12 @@ export const options = {
       },
       title: {
          display: true,
+         font: {
+            size: '16px',
+         },
+         padding: {
+            bottom: 14,
+         },
          text: 'Top Trending Keywords',
       },
       datalabels: {
@@ -31,8 +37,7 @@ export const options = {
    },
 }
 
-const KeywordChart = ({ startDate, endDate }) => {
-   const [selectedInterval, setSelectedInterval] = useState('daily')
+const KeywordChart = ({ startDate, endDate, selectedInterval }) => {
    const [fetchData, setFetchData] = useState([])
 
    useEffect(() => {
@@ -98,11 +103,10 @@ const KeywordChart = ({ startDate, endDate }) => {
    }
 
    return (
-      <ChartWithIntervalSelect
+      <Chart
          options={options}
          data={data}
-         selectedInterval={selectedInterval}
-         setSelectedInterval={setSelectedInterval}
+         colSpan={4}
       />
    )
 }
