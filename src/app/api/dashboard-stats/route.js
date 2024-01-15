@@ -9,7 +9,7 @@ export async function POST(req) {
          return NextResponse.json('Missing required fields: startDate, endDate', { status: 200 })
       }
 
-      const pipeline = [
+      const topTrendingKeywordPipeline = [
          {
             $match: {
                $and: [
@@ -105,7 +105,7 @@ export async function POST(req) {
       ]
 
       const topTrendingKeyword = await prisma.searchKeyword.aggregateRaw({
-         pipeline,
+         pipeline: topTrendingKeywordPipeline,
       })
 
       const totalActiveUsers = await prisma.loginTime.aggregateRaw({
